@@ -2,6 +2,7 @@ package com.sky.controller.admin;
 
 
 import com.sky.constant.FileUploadConstant;
+import com.sky.constant.MessageConstant;
 import com.sky.result.Result;
 import com.sky.utils.AliOssUtil;
 import io.swagger.annotations.Api;
@@ -67,10 +68,11 @@ public class CommonController {
             String path = FileUploadConstant.FILE_UPLOAD_PATH + newFileName;
             file.transferTo(new File(path));
             log.info("拼接的路径：{}", path);
-            return Result.success(FileUploadConstant.FILE_VISIT_PATH + newFileName);
+            log.info("文件拼接路径：{}", FileUploadConstant.FILE_VISIT_PATH + newFileName);
+            return Result.success();
         } catch (IOException e) {
             log.info("文件上传失败");
-            throw new RuntimeException(e);
+            return Result.error(MessageConstant.UPLOAD_FAILED);
         }
 
     }

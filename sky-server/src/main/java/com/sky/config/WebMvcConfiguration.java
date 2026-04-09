@@ -70,7 +70,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
 //        registry.addResourceHandler("/image/**").addResourceLocations("file:assets/images/");
-        registry.addResourceHandler("/image/**").addResourceLocations("file:" + System.getProperty("user.dir") + "/assets/images/");
+//        registry.addResourceHandler("/image/**").addResourceLocations("file:" + System.getProperty("user.dir") + "/assets/images/");
+        registry.addResourceHandler("/image/**").addResourceLocations("file:F:/assets/images/");
+
 
     }
 
